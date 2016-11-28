@@ -33,7 +33,7 @@ public class PetRepository {
 		List<Pet> ownerPets = new LinkedList<Pet>();
 		for (Pet pet : pets) {
 			String currentOwername = pet.getOwnername();
-			if(ownername.equals(currentOwername)){
+			if(ownername != null && ownername.equals(currentOwername)){
 				ownerPets.add(pet);
 			}
 		}

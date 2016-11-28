@@ -16,7 +16,7 @@ import castro.alejandro.security.session.filter.RestCorsFilter;
 import castro.alejandro.security.session.filter.UnauthorizedRequestStatusFilterChain;
 
 @Component
-public class HttpAuthenticationEntryPoint implements AuthenticationEntryPoint {
+public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 	
 	@Autowired
 	RestCorsFilter restCorsFilter;

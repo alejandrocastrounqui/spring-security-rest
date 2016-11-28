@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import castro.alejandro.model.User;
 import castro.alejandro.repository.UserRepository;
+import castro.alejandro.security.controller.UserDTO;
 import castro.alejandro.security.model.RestGrantedAuthority;
 import castro.alejandro.security.service.exception.IncorrectCodeException;
 
@@ -51,12 +52,13 @@ public class UserService {
 		}
 	}
 	
-	public User loggedUser(){
+	public UserDTO loggedUser(){
 		Authentication currentAuthContainer = SecurityContextHolder.getContext().getAuthentication();
         String name = currentAuthContainer.getName();
 		LOGGER.info("Retrieving session user " + name);
 		User user = userRepository.findByUsername(name);
-		return user;
+		UserDTO userDTO = new UserDTO(user);
+		return userDTO;
 	}
 
 }

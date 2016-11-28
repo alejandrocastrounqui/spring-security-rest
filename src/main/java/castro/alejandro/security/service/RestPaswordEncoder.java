@@ -8,13 +8,13 @@ public class RestPaswordEncoder implements PasswordEncoder {
 
 	@Override
 	public String encode(CharSequence rawPassword) {
-		//Paso a minuscula y aplico aes
+		//Aplico el algoritmo de encriptación
 		return rawPassword+"abc";
 	}
 
 	@Override
 	public boolean matches(CharSequence rawPassword, String encodedPassword) {
-		//comparo con algoritmo de matvheo aes
+		//comparo con algoritmo de comprobación.
 		return (encode(rawPassword)).equals(encodedPassword);
 	}
 

@@ -50,12 +50,7 @@ public class RestCorsFilter{
 				if (!isValid || CorsUtils.isPreFlightRequest(request)) {
 					return;
 				}
-				//SessionCookieConfig sessionCookieConfig = request.getServletContext().getSessionCookieConfig();
-				//sessionCookieConfig.setDomain("0.0.0.0:9001");
 			}
-			//request;
-			//context.setSessionTrackingModes(sessionTrackingModes);
-			//context.setSessionCookieDomain
 		}
 		filterChain.doFilter(request, response);
 	}

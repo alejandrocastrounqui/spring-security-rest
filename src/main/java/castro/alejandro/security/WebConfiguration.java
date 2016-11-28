@@ -10,6 +10,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import castro.alejandro.security.session.RestAuthFailureHandler;
 import castro.alejandro.security.session.RestAuthSuccessHandler;
+import castro.alejandro.security.session.RestAuthenticationEntryPoint;
 import castro.alejandro.security.session.RestAuthenticationProvider;
 import castro.alejandro.security.session.RestLogoutSuccessHandler;
 
@@ -23,6 +24,9 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	RestAuthSuccessHandler restAuthSuccessHandler;
+	
+	@Autowired
+	RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 	
 	@Autowired
 	RestAuthFailureHandler restAuthFailureHandler;
@@ -58,7 +62,10 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter{
 	        .logout()
 	        .permitAll()
 	        .logoutRequestMatcher(new AntPathRequestMatcher(LOGOUT_PATH, LOGOUT_METHOD))
-	        .logoutSuccessHandler(restLogoutSuccessHandler);
+	        .logoutSuccessHandler(restLogoutSuccessHandler)
+	    .and()
+	        .exceptionHandling()
+	        .authenticationEntryPoint(restAuthenticationEntryPoint);;
 		
     }
 

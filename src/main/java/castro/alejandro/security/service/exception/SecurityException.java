@@ -1,14 +1,14 @@
 package castro.alejandro.security.service.exception;
 
-public class ActionNotAlowedException extends SecurityException {
+public class SecurityException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 	
-	public ActionNotAlowedException() {
+	public SecurityException() {
         super();
     }
 
-    public ActionNotAlowedException(String message) {
+    public SecurityException(String message) {
         super(message);
     }
 }

@@ -1,8 +1,6 @@
 package castro.alejandro.security.service.exception;
 
-import org.springframework.security.core.AuthenticationException;
-
-public class IncorrectCodeException extends AuthenticationException{
+public class IncorrectCodeException extends SecurityException{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -10,9 +8,4 @@ public class IncorrectCodeException extends AuthenticationException{
 		super(message);
 	}
 	
-	public IncorrectCodeException(String message, Throwable throwable) {
-		super(message, throwable);
-	}
-
-
 }
