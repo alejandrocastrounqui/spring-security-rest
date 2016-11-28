@@ -1,4 +1,10 @@
-#Spring security RESTful CORS
+<a href="https://github.com/alejandrocastrounqui">
+    <img src="readme/profile.jpg" width=50px>
+</a>
+Autor: Alejandro Castro 
+
+
+##Spring security RESTful CORS
 
 Este proyecto es un ejemplo de como configurar Spring security con un esquema RESTful y un sistema de autenticación basado en cookies. Además se incluye una configuración CORS integrada a la seguridad.
 
@@ -245,10 +251,12 @@ Dado que Spring utiliza un esquema de *middlewares* se agregaron componentes que
 
 `#castro.alejandro.security.session.filter.BadRequestStatusFilterChain`
 `#castro.alejandro.security.session.filter.OkStatusFilterChain`
-`#castro.alejandro.security.session.filter.UnauthorizedRequestStatusFilterChain`
+`#castro.alejandro.security.session.filter.UnauthorizedRequestStatusFilterChain`    
 
 
+Para probar este comportamiento puede utilizar el proyecto implementado Angular del siguiente reposiyotio.    
 
+[https://github.com/alejandrocastrounqui/angular-rest-session](https://github.com/alejandrocastrounqui/angular-rest-session)
 
 
 
